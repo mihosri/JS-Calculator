@@ -6,6 +6,12 @@ function App() {
   const [answer, setAnswer] = useState('')
   const [expression, setExpression] = useState('')
 
+  const et = expression.trim();
+
+  const isOperator = (symbol: string) => {
+    return /[*/+-]/.test(symbol)
+  }
+
   const buttonPress = (symbol: string) => {
     if (symbol == 'clear') {
       setAnswer('0')
@@ -16,8 +22,10 @@ function App() {
         answer.toString().charAt(0) === '-' ? answer.slice(1) : '-' + answer
       )
     } else if (symbol === 'percentage') {
-      if (answer === '') return
-      setAnswer((parseFloat(answer) / 100).toString())
+      if (answer === '') return;
+      setAnswer((parseFloat(answer) / 100).toString());
+    }else if (isOperator(symbol)){
+      setExpression(et + " "+ symbol + " ");
     }
   }
 
@@ -26,8 +34,8 @@ function App() {
       <h1>Javascript Calculator</h1>
       <div id="calculator">
         <div id="display" style={{ textAlign: 'right' }}>
-          <div id="answer">0</div>
-          <div id="expression"></div>
+          <div id="answer">{answer}</div>
+          <div id="expression">{expression}</div>
         </div>
         <button
           id="clear"
