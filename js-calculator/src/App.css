@@ -1,6 +1,15 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root{
+  --white: white;
+  --light-grey: #f0f0f0;
+  --dark-grey: #6c6c6c;
+  --black: #1e1e1e;
+  --yellow: #f99c14;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
