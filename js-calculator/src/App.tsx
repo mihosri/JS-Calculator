@@ -14,14 +14,14 @@ function App() {
 
   const buttonPress = (symbol: string) => {
     if (symbol == 'clear') {
-      setAnswer('0')
-      setExpression('')
+      setAnswer("")
+      setExpression("0")
     } else if (symbol === 'negative') {
       if (answer === '') return
       setAnswer(
         answer.toString().charAt(0) === '-' ? answer.slice(1) : '-' + answer
       )
-    } else if (symbol === 'percentage') {
+    } else if (symbol === 'percent') {
       if (answer === '') return;
       setAnswer((parseFloat(answer) / 100).toString());
     }else if (isOperator(symbol)){
@@ -48,7 +48,11 @@ function App() {
     }
   }
 
-  const calculate = () => {}
+  const calculate = () => {
+
+  }
+
+
   return (
     <div className="container">
       <h1>Javascript Calculator</h1>
@@ -72,8 +76,8 @@ function App() {
           +/-
         </button>
         <button
-          id="percentage"
-          onClick={() => buttonPress('percentage')}
+          id="percent"
+          onClick={() => buttonPress('percent')}
           className="light-grey"
         >
           %

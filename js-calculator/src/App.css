@@ -86,7 +86,7 @@ button:active {
 #negative {
   grid-area: negative;
 }
-#percentage {
+#percent {
   grid-area: percentage;
 }
 #divide {
