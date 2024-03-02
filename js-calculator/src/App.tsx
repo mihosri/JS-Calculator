@@ -12,7 +12,7 @@ function App() {
       <h1>Javascript Calculator</h1>
       <div id="calculator">
         <div id="display" style={{ textAlign: 'right' }}>
-          <div id="answer"></div>
+          <div id="answer">0</div>
           <div id="expression"></div>
         </div>
         <button
