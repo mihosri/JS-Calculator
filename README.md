@@ -25,3 +25,4 @@ npm run dev
 - in css styling, I learnt about grid-template-area
 
 # Deployed App Link
+https://main--jsriptcalculator.netlify.app/
