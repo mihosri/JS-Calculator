@@ -27,8 +27,22 @@ function App() {
     }else if (isOperator(symbol)){
       setExpression(et + " "+ symbol + " ");
     }
+    else if (symbol === "=")
+    {
+      calculate()
+    }else if (symbol === "0")
+    {
+      if(expression.charAt(0)!== "0"){
+        setExpression(expression+symbol)
+      }   
+    }else if (symbol === "."){
+      const lastNumber = expression.split(/[*+-/]/g).pop();
+      if(lastNumber?.includes(".")) return;
+      setExpression(expression+symbol)
+    }
   }
 
+  const calculate = () => {}
   return (
     <div className="container">
       <h1>Javascript Calculator</h1>
