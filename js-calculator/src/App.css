@@ -38,10 +38,12 @@
 
 .dark-grey {
   background-color: var(--dark-grey);
+  color: white;
 }
 
 .yellow {
   background-color: var(--yellow);
+  color: white;
 }
 
 button {
