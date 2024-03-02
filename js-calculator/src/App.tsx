@@ -36,9 +36,15 @@ function App() {
         setExpression(expression+symbol)
       }   
     }else if (symbol === "."){
-      const lastNumber = expression.split(/[*+-/]/g).pop();
+      const lastNumber = expression.split(/[-+/*]/g).pop();
       if(lastNumber?.includes(".")) return;
       setExpression(expression+symbol)
+    } else {
+      if(expression.charAt(0) === "0"){
+        setExpression(expression.slice(1)+symbol);
+      }else{
+        setExpression(expression+symbol)
+      }
     }
   }
 
